@@ -1,0 +1,68 @@
+﻿@model TransporteMouza.Models.Neumatico
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<hr />
+<script type="text/javascript">
+    function DeleteConfirm() {
+        if (confirm("Estás seguro que deseas eliminar?"))
+            return true;
+        else
+            return false;
+    }
+</script>
+
+
+<div>
+    <h4>Neumatico</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rodado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rodado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Detalle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Detalle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdCompraNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCompraNavigation.IdCompra)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdTipoUnidadNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdTipoUnidadNavigation.IdTipoUnidad)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdNeumatico" />
+        <input type="submit" value="Delete" class="btn btn-danger" onclick="return  DeleteConfirm()" /> |
+        <input type="hidden" name="del" id="del" values="" />
+        <a asp-action="Index" class="btn btn-info">Back to List</a>
+    </form>
+</div>

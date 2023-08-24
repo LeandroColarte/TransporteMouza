@@ -1,0 +1,68 @@
+﻿@model TransporteMouza.Models.Compra
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<hr />
+<script type="text/javascript">
+    function DeleteConfirm() {
+        if (confirm("Estás seguro que deseas eliminar?"))
+            return true;
+        else
+            return false;
+    }
+</script>
+
+
+<div>
+    <h4>Compra</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Neumatico)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Neumatico)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Detalle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Detalle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCompra)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaCompra)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FormaDePago)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FormaDePago)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCompra" />
+        <input type="submit" value="Delete" class="btn btn-danger" onclick="return  DeleteConfirm()" /> |
+        <input type="hidden" name="del" id="del" values="" />
+        <a asp-action="Index" class="btn btn-info">Back to List</a>
+    </form>
+</div>
